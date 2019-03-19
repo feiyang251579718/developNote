@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>固定Footer在底部</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        #container {
+            min-height: 100%;
+            height: auto !important;
+            height: 100%; /*IE6不识别min-height*/
+            position: relative;
+        }
+
+        #header {
+            background: #ff0;
+            padding: 10px;
+        }
+
+        #page {
+            width: 960px;
+            margin: 0 auto;
+            padding-bottom: 60px; /*等于footer的高度*/
+        }
+
+        #footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px; /*脚部的高度*/
+            background: #6cf;
+            clear: both;
+        }
+        ul{
+            font-size: 16px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="header">Header Section</div>
+    <div id="page">
+        <ul>
+            <li>
+                &#60;html&#62;和&#60;body&#62;标签：html和body标签中必须将高度(height)设置为“100%”,这样我们就可以在容器上设置百分比高度，同时需要将html,body的margin和padding都移除，也就是html,body的margin和padding都为0
+            </li>
+            <li>
+                div#container容器：div#container容器必须设置一个最小高度(min-height)为100％；这主要使他在内容很少（或没有内容）情况下，能保持100％的高度，不过在IE6是不支持min-height的，所以为了兼容IE6，我们需要对min-height做一定的兼容处理，具体可以看前面的代码，或者阅读Min-Height
+                Fast Hack了解如何解决min-height在Ie6下的bug问题。另外我们还需要在div#container容器中设置一个"position:relative"以便于里面的元素进行绝对定位后不会跑了div#container容器；
+            </li>
+            <li>
+                div#page容器：div#page这个容器有一个很关键的设置，需要在这个容器上设置一个padding-bottom值，而且这个值要等于（或略大于）页脚div#footer的高度（height）值，当然你在div#page中可以使用border-bottom人水-width来替代padding-bottom，但有一点需要注意，此处你千万不能使用margin-bottom来代替padding-bottom，不然会无法实现效果；
+            </li>
+            <li>
+                div#footer容器：div#footer容器必须设置一个固定高度，单位可以是px(或em)。div#footer还需要进行绝对定位，并且设置bottom:0；让div#footer固定在容器div#container的底部，这样就可以实现我们前面所说的效果，当内容只有一点时，div#footer固定在屏幕的底部（因为div#container设置了一个min-height:100%），当内容高度超过屏幕的高度，div#footer也固定在div#container底部，也就是固定在页面的底部。你也可以给div#footer加设一个"width:100%"，让他在整个页面上得到延伸；
+            </li>
+        </ul>
+    </div>
+    <div id="footer">Footer Section</div>
+</div>
+</body>
+</html>

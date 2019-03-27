@@ -1,0 +1,17 @@
+{
+  "name": "developnote",
+  "description": "开发日志",
+  "main": "index.js",
+  "authors": [
+    "zhenyang.lin <251579718@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/feiyang251579718/developNote",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "developnote",
+  "version": "1.0.0",
+  "description": "* absoult_footer 固定footer * city_selector 城市联动选择器 * bank_auto 根据银行卡号自动判断银行名称",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feiyang251579718/developNote.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/feiyang251579718/developNote/issues"
+  },
+  "homepage": "https://github.com/feiyang251579718/developNote#readme"
+}
